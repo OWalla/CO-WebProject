@@ -1,0 +1,80 @@
+﻿@model IEnumerable<BookStore.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th class="col-md-1">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th class="col-md-1">
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th class="col-md-8">
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th class="col-md-1">
+            @Html.DisplayNameFor(model => model.YearPublished)
+        </th>
+        <th class="col-md-1"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @{
+                if (item.Description.ToString().Length > 120)
+                {
+                    var minDesc = item.Description.Substring(0, 120);
+                    var fullDesc = item.Description.Substring(120, item.Description.Length - 120);
+                    <span class="bookDescCol">
+                        @Html.DisplayFor(modeltem => minDesc)
+                        <a href="#" class="moreLink">...</a>
+                        <span class="noDisplay">
+                            @Html.DisplayFor(modeltem => fullDesc)
+                        </span>
+                    </span>
+                }
+                else
+                {
+                        @Html.DisplayFor(modeltem => item.Description)
+                }
+            }
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $(".moreLink").click(function () {
+                        $(this).addClass("noDisplay");
+                        $(this).next().addClass("yesDisplay");
+                        $(this).next().removeClass("noDisplay");
+                        $(this).parent().prev().toggle();
+                        $(this).prev().toggle();
+                        return false;
+                    })
+                });
+            </script>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearPublished)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

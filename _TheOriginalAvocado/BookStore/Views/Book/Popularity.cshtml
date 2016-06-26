@@ -1,0 +1,63 @@
+﻿@model IEnumerable<BookStore.Models.bookCommentsViewModel>
+
+@{
+    ViewBag.Title = "Popular Books";
+}
+
+<h2 class="page-title">@ViewBag.Title</h2>
+<p>The most popular books by how much they are being blabed about.</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearPublished)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+    </tr>
+
+@{ 
+    var booksInfo = Model.Select(x => new
+    {
+        bookID = x.bookID,
+        Name = x.Name,
+        Author = x.Author,
+        YearPublished = x.YearPublished
+    }).Distinct();
+    foreach (var book in booksInfo)
+    {
+    <tr>
+        <td>
+                @book.Name
+        </td>
+        <td>
+                @book.Author
+        </td>
+        <td>
+                @book.YearPublished
+        </td>
+        <td>
+            <ul>
+                @{
+                    var commentsPerBook = Model.Where(x => x.bookID == book.bookID).ToArray();
+                    foreach (var comment in commentsPerBook)
+                    {
+                        <li>
+                            @comment.Comments
+                        </li>
+                    }
+                }
+            </ul>
+        </td>
+    </tr>
+}
+}
+
+</table>

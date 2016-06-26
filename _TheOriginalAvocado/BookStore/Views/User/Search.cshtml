@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BookStore.Models.User>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Reviewers Search</h2>
+<p>
+    @using (Html.BeginForm("Search", "User", FormMethod.Get))
+    {
+    <p>
+        First Name: @Html.TextBox("firstName")
+        <br />
+        Last Name:  @Html.TextBox("lastName")
+        <br />
+        E-mail:     @Html.TextBox("email")
+        <br />
+        <input type="submit" value="Search" />
+    </p>
+    }
+<hr />
+<ul>
+@foreach (var item in Model)
+{
+    <li class="users-list">
+        <p>
+            <h3 class="book-headline">
+                @Html.ActionLink(item.FirstName, "../Comment/Search",new { userId = item.ID })
+            </h3>
+            <h4>@Html.DisplayFor(modelItem => item.LastName)</h4>
+            <h4>@Html.DisplayFor(modelItem => item.Email)</h4>
+        <p class="book-details">@Html.DisplayFor(modelItem => item.Comments.FirstOrDefault().Content)</p>
+    </li>
+}
+</ul> 

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - BookStore</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="@Url.Content("~/Content/other.css")" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <nav>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Rotten Avokados", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Our Library", "List", "Book")</li>
+                        <li>@Html.ActionLink("Authors", "Author", "Book")</li>
+                        <li>@Html.ActionLink("Popular Books", "Popularity", "Book")</li>
+                        <li>@Html.ActionLink("Popular Reviewers", "popularity", "User")</li>
+                        <li>@Html.ActionLink("Search Reviewers", "Search", "User")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+
+        <div id="temperatureDiv">
+            <h4>Weather</h4>
+            <p>getting info...</p>
+        </div>
+
+        <!-- Weather service -->
+        <script src="~/Scripts/weatherService.js"></script>
+        <script src="https://query.yahooapis.com/v1/public/yql?q=select item, wind from weather.forecast where woeid in (select woeid from geo.places(1) where text='israel') and u='c'&format=json&callback=weatherCallback"></script>
+
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Rotten Avocados</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<BookStore.Models.userCommentsViewModel>
+
+@{
+    ViewBag.Title = "Popular Reviewers";
+    
+    // collections of users
+    var usersInfo = Model.Select(x => new
+    {
+        FirstName = x.FirstName,
+        LastName = x.LastName,
+        UserID = x.UserID,
+    }).Distinct();
+    
+    // collection of users and there comments
+    var usersCommentsInfo = usersInfo.Select(user => new {
+        UserID = user.UserID,
+        FirstName = user.FirstName,
+        LastName = user.LastName,
+        Comments = Model.Where(y => y.UserID == user.UserID).ToArray()
+    });
+    
+    // collection of users and number of comments (for JSON phi data)
+    var usersReplayCount = usersCommentsInfo.Select(x => new { Name = x.FirstName, Count = x.Comments.Count() });
+}
+
+<h2 class="page-title">@ViewBag.Title</h2>
+<p>The most popular reviewers by how much they blab.</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+    </tr>
+
+@{
+    foreach (var user in usersCommentsInfo)
+    {
+        <tr>
+            <td>
+                @user.FirstName
+            </td>
+            <td>
+                @user.LastName
+            </td>
+            <td>
+                <ul>
+                    @{
+                        // print comments for each user
+                        foreach (var comment in user.Comments)
+                        {
+                            <li>
+                                @comment.Comment
+                            </li>
+                        }
+                    }
+                </ul>
+            </td>
+        </tr>
+    }
+}
+
+</table>
+
+<section id="popular-users-graph">
+    <h3>Pie Chart</h3>
+</section>
+
+<script src="~/Scripts/d3/d3.min.js"></script>
+<script src="~/Scripts/siteGraph.js"></script>
+<script>
+    // print JSON data
+    var usersData = @Html.Raw(Json.Encode(usersReplayCount));
+    createPopularUsersGraph(usersData);
+</script>

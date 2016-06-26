@@ -1,0 +1,22 @@
+﻿@model IEnumerable<BookStore.Models.Comment>
+
+@{
+    ViewBag.Title = "Search";
+}
+<section id="comments">
+    <h3>Comments</h3>
+    @foreach (var item in Model)
+    {
+        <article>
+            <h4>
+                @Html.DisplayFor(modelItem => item.Title)
+                By @(Html.ActionLink(item.User.FirstName + " " + item.User.LastName, "Details", "User", new { id = item.UserID }, null)).
+            </h4>
+            <p>@Html.DisplayFor(modelItem => item.Content)</p>
+        </article>
+    }
+    @if (Model.Count() < 1)
+    {
+        <p>no comments</p>
+    }
+</section>

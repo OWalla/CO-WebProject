@@ -1,0 +1,16 @@
+﻿@model IEnumerable<BookStore.Models.Book>
+
+<ul id="books-list">
+    @foreach (var item in Model)
+    {
+        <li class="book-list">
+            <p>
+                <h3 class="book-headline">
+                    @Html.ActionLink(item.Name, "PublicDetails", new { id = item.ID })
+                </h3>
+                <h4>@Html.DisplayFor(modelItem => item.Author)</h4>
+                <h4>@Html.DisplayFor(modelItem => item.YearPublished)</h4>
+            <p class="book-details">@Html.DisplayFor(modelItem => item.Description)</p>
+        </li>
+    }
+</ul>

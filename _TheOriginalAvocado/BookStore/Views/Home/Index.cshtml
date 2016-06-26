@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<header>
+    <h1 class="main-title">Welcome to Rotten Avocados</h1>
+    @*<h3>Less important heading here</h3>*@
+</header>
+<div class="jumbotron">
+    <h2>The best website for book reviews!</h2>
+    <div class="avocado-pics">
+        <canvas id="myCanvas" width="400" height="200"></canvas>
+        <img src="../../Content/Images/Avocado2.png" width="300" height="200"/>
+    </div>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+
+        var imageObj = new Image();
+
+        imageObj.onload = function () {
+            context.drawImage(imageObj, 100, 0);
+        };
+        imageObj.src = '../../Content/Images/Avocado.png';
+    </script>
+    <p class="lead">Holy moly!</p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>How to Write Children's Books</h2>
+        <p>
+            <video controls="controls" width="300">
+                <source src="http://content3.videojug.com/7b/7b7dfb03-9643-5dff-636b-ff0008ce14d6/how-to-write-childrens-books__VJ480PENG.mp4" type="video/mp4" />
+                <source src="http://content3.videojug.com/7b/7b7dfb03-9643-5dff-636b-ff0008ce14d6/how-to-write-childrens-books__VJ480PENG.webm" type="video/webm" />
+                <source src="http://content3.videojug.com/7b/7b7dfb03-9643-5dff-636b-ff0008ce14d6/how-to-write-childrens-books__VJ480PENG.ogv" type="video/ogg" />
+            </video>
+        </p>
+        <p><a class="btn btn-default" href="http://www.dummies.com/how-to/content/writing-childrens-books-for-dummies-cheat-sheet.html">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Story of a book</h2>
+        <article>
+            <p>
+                The Disney movie <em>The Little Mermaid</em> was
+                first released to theatres in 1989.
+                The movie was based on a book..
+            </p>
+            <aside>
+                The movie earned $87 million during its initial release.
+            </aside>
+            <p>
+                Realize the power of books!
+            </p>
+        </article>
+    </div>
+    <div class="col-md-4">
+        <h2>Audio Books</h2>
+        <p>An audiobook is a recording of a text being read. A reading of the complete text is noted as "unabridged", while readings of a reduced version, or abridgement of the text are labeled as "abridged".</p>
+        <p><a class="btn btn-default" href="http://www.audible.com/">Learn more &raquo;</a></p>
+    </div>
+</div>

@@ -7,7 +7,12 @@ angular.module('myApp')
                 return $http.get(baseUrl + "/book/list/" + name + "/" + author + "/" + yearFrom)
                     .then(function(response) {
                         return response.data;
-                    });
+                    })
+            },
+            create: function(book) {
+                return $http.post(baseUrl + "/book/put", book).then(function(response) {
+                    return response.data;
+                })
             }
-        };
+        }
     }]);

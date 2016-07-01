@@ -9,5 +9,9 @@
                 templateUrl: "../views/book/list.html",
                 controller: "BookController"
             })
+            .when("/book/create", {
+                templateUrl: "../views/book/create.html",
+                controller: "BookController"
+            })
     }]);
 }());

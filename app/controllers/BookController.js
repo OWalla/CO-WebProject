@@ -5,6 +5,7 @@
 
     function BookController($scope, BookService) {
 
+        $scope.book = {};
         $scope.name = "";
         $scope.author = "";
         $scope.afterYear = "";
@@ -16,6 +17,12 @@
         }
 
         $scope.search();
+
+        $scope.create = function() {
+            BookService.create($scope.book).then(function(result) {
+                alert(result);
+            })
+        }
 
     }
 

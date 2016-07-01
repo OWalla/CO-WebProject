@@ -2,6 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var config = require('config');
 var jsonfile = require('jsonfile');
+var bodyParser = require("body-parser");
 
 // models
 var Comment = require('./models/comment');
@@ -9,6 +10,12 @@ var Book = require('./models/Book');
 
 // Set up the app
 var app = express();
+
+// Post data support
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
+app.use(bodyParser.json());
 
 // Use jade engine
 app.set('view engine', 'jade');

@@ -25,4 +25,55 @@ router.get('/list/(:name)?/(:author)?/(:yearPublished)?', function(req, res) {
         });
 });
 
+router.post('/put', function(req, res) {
+    var successMessage = "Book saved successfully!";
+    var id = req.body.id;
+    var name = req.body.name;
+    var author = req.body.author;
+    var description = req.body.description;
+    var yearPublished = req.body.yearPublished;
+
+    if (!name | !author | !description | !yearPublished) {
+        res.json("Some of the data is missing!");
+    } else if (id) {
+        Book.find({
+            _id: id
+        }, function(err, book) {
+            if (err) {
+                console.log(err);
+                res.json(err);
+            } else {
+                book.name = name;
+                book.author = author;
+                book.description = description;
+                book.yearPublished = yearPublished;
+                book.save(function(err, result) {
+                    if (err) {
+                        console.log(err);
+                        res.json(err);
+                    } else {
+                        res.json(successMessage)
+                    }
+                });
+            }
+        })
+    } else {
+        var book = new Book({
+            name: name,
+            author: author,
+            description: description,
+            yearPublished: yearPublished,
+            comments: []
+        });
+        book.save(function(err, result) {
+            if (err) {
+                console.log(err)
+                res.json(err);
+            } else {
+                res.json(successMessage)
+            }
+        })
+    }
+});
+
 module.exports = router;

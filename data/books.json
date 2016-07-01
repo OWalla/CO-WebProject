@@ -1,0 +1,45 @@
+{
+    "books": [{
+        "name": "Red Light",
+        "author": "",
+        "description": "templates/templateA.html",
+        "yearPublished": 5,
+        "comments": []
+    }, {
+        "Name": "Why you should NOT read books",
+        "Author": "Homeless",
+        "Description": "Cant say much. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.",
+        "YearPublished": 1999,
+        "comments": []
+    }, {
+        "Name": "Where are we?",
+        "Author": "Who am I?",
+        "Description": "and Why? Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc!",
+        "YearPublished": 2020,
+        "comments": []
+    }, {
+        "Name": "How To End The World?",
+        "Author": "Satan",
+        "Description": "Have you ever wondered how you can destroy the world? NOW is your chance to learn!",
+        "YearPublished": 1666,
+        "comments": []
+    }, {
+        "Name": "Evil for Dummies",
+        "Author": "Satan",
+        "Description": "Are you new to the evil-doers club, here you can learn how to be evil and fast!!",
+        "YearPublished": 1990,
+        "comments": []
+    }, {
+        "Name": "Spider-man",
+        "Author": "Peter Parker",
+        "Description": "Spiderman, Spiderman, Does whatever a spider can Spins a web, any size, Catches thieves just like flies Look Out! Here comes the Spiderman. Is he strong? Listen bud, He's got radioactive blood. Can he swing from a thread Take a look overhead Hey, there There goes the Spiderman. In the chill of night At the scene of a crime Like a streak of light He arrives just in time. Spiderman, Spiderman Friendly neighborhood Spiderman Wealth and fame He's ignored Action is his reward. To him, life is a great big bang up Wherever there's a hang up You'll find the Spider man.",
+        "YearPublished": 1960,
+        "comments": []
+    }, {
+        "Name": "Do stuff",
+        "Author": "Someone",
+        "Description": "How to do stuff...",
+        "YearPublished": 1999,
+        "comments": []
+    }]
+}

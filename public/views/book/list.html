@@ -1,0 +1,21 @@
+<h2>Book Search</h2>
+<p>
+    Name: <input type="text" ng-model="name"/>
+    Author: <input type="text" ng-model="author"/>
+    After Year: <input type="text" ng-model="afterYear"/>
+    <input type="button" value="Filter" ng-click="search()"/>
+</p>
+<hr/>
+<section id="books-list-section">
+    <ul id="books-list">
+        <li class="book-list" ng-repeat="book in books">
+            <p>
+            <h3 class="book-headline">
+                <a href="/book/details/{{book._id}}">{{book.name}}</a>
+            </h3>
+            <h4>{{ book.author}}</h4>
+            <h4>{{book.yearPublished}}</h4>
+            <p class="book-details">{{book.description}}</p>
+        </li>
+    </ul>
+</section>

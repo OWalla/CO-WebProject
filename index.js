@@ -10,6 +10,7 @@ app.set('view engine', 'jade');
 
 // Routing
 app.use('/', express.static('public'));
+app.use('/app', express.static('app'));
 
 // Book
 var books = require('./controllers/book');

@@ -1,3 +1,9 @@
 {
-    
+  "RottenAvocados": {
+    "dbConfig": {
+      "host": "localhost",
+      "port": 27017,
+      "dbName": "RottenAvocadosDB"
+    }
+  }
 }

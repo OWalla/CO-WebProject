@@ -11,10 +11,11 @@
 
         $scope.search = function() {
             BookService.search($scope.name, $scope.author, $scope.afterYear).then(function(data) {
-                alert(data);
                 $scope.books = data;
             })
         }
+
+        $scope.search();
 
     }
 

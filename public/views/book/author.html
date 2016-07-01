@@ -1,0 +1,25 @@
+<h2>Author</h2>
+
+<table class="table" id="authors-table">
+    <tr>
+        <th>
+            Author
+        </th>
+        <th>
+            Number of books
+        </th>
+    </tr>
+
+    <tr ng-repeat="author in authors">
+        <td>
+            {{author._id}}
+        </td>
+        <td>
+            {{author.count}}
+        </td>
+    </tr>
+    }
+
+</table>
+
+<!-- convert table into bin chart -->

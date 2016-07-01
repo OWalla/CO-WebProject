@@ -13,5 +13,9 @@
                 templateUrl: "../views/book/create.html",
                 controller: "BookController"
             })
+            .when("/book/author", {
+                templateUrl: "../views/book/author.html",
+                controller: "AuthorController"
+            })
     }]);
 }());

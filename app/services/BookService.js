@@ -13,6 +13,11 @@ angular.module('myApp')
                 return $http.post(baseUrl + "/book/put", book).then(function(response) {
                     return response.data;
                 })
+            },
+            getAuthorsBookData: function() {
+                return $http.get(baseUrl + "/book/author").then(function(response) {
+                    return response.data;
+                })
             }
         }
     }]);

@@ -89,4 +89,25 @@ router.get('/popularity', function(req, res) {
         });
 });
 
+router.get('/author', function(req, res) {
+    Book.aggregate([{
+        $group: {
+            _id: '$author',
+            count: {
+                $sum: 1
+            },
+        }
+    }], function(err, result) {
+        if (err) {
+            console.log(err);
+            res.json(err);
+        } else {
+            console.log(result);
+            res.json(result);
+        }
+    });
+});
+
+
+
 module.exports = router;

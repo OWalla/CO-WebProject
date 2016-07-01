@@ -7,8 +7,7 @@
 
         BookService.getAuthorsBookData().then(function(data) {
             $scope.authors = data;
-            var booksData = angular.toJson($scope.authors);
-            siteGraph.createPopularBooksGraph(booksData);
+            siteGraph.createPopularBooksGraph($scope.authors);
         })
     }
 

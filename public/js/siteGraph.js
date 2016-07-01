@@ -7,16 +7,18 @@ var siteGraph = (function() {
         createPopularBooksGraph: function createPopularBooksGraph(data) {
             // convert {Author,Count} objects to array of values
             var countValuesArr = Array.from(data, function(b) {
-                return b.Count
+                return b.count
             });
             // find the max and create scale
             var max = d3.max(countValuesArr);
             var scale = d3.scale.linear().domain([0, max]).range([0, 100]);
 
+            var b = d3.select("#authors-table").selectAll("th:nth-child(2)");
+            console.log(b);
             // for each table row, add div to act as the graph bin
-            var g = d3.select("#authors-table").selectAll("tr td:nth-child(2)").data(data)
+            var g = d3.select("#authors-table").selectAll("td:nth-child(2)").data(data)
                 .append("div").attr("class", "graph-bar").style("width", function(d, i) {
-                    return (scale(d.Count)).toString() + "%";
+                    return (scale(d.count)).toString() + "%";
                 });
         },
 

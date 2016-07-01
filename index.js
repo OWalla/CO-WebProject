@@ -3,6 +3,10 @@ var mongoose = require('mongoose');
 var config = require('config');
 var jsonfile = require('jsonfile');
 
+// models
+var Comment = require('./models/comment');
+var Book = require('./models/Book');
+
 // Set up the app
 var app = express();
 
@@ -16,9 +20,6 @@ app.use('/app', express.static('app'));
 // Book
 var books = require('./controllers/book');
 app.use('/book', books);
-
-var Comment = require('./models/comment');
-var Book = require('./models/Book');
 
 //connect to our database
 var dbConfig = config.get('RottenAvocados.dbConfig');

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var Book = require('../models/book');
+var mongoose = require('mongoose');
+var Book = mongoose.model('Book')
 
 router.get('/list/(:name)?/(:author)?/(:yearPublished)?', function(req, res) {
 

@@ -76,4 +76,17 @@ router.post('/put', function(req, res) {
     }
 });
 
+router.get('/popularity', function(req, res) {
+    Book.find({})
+        .populate('comments')
+        .exec(function(err, books) {
+            if (err) {
+                console.log(err);
+                res.json(err);
+            } else {
+                return res.json(books);
+            }
+        });
+});
+
 module.exports = router;

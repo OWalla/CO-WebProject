@@ -25,6 +25,10 @@
                 $location.path('/book/list');
             });
         }
+
+        $scope.editBook = function() {
+            $location.path('/book/edit/' + $routeParams.id);
+        }
     }
 
     app.controller("BookDetailsController", ["$scope", "$routeParams", "$location", 'BookService', 'CommentService', BookDetailsController]);

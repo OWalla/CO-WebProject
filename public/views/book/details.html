@@ -1,7 +1,8 @@
 <article id="bookPublicDetailes">
     <h2>{{ book.name }}</h2>
     <p class="book-subtitle">
-        By <a href="/book/author/{{book.author}}">{{ book.author }}</a>,
+        By
+        <a href="/book/author/{{book.author}}">{{ book.author }}</a>,
         {{ book.yearPublished }}
     </p>
     <p class="book-description">{{ book.description }}</p>
@@ -13,28 +14,31 @@
         <h3>
             {{comment.title}}
         </h3>
-        <strong>Posted by: {{comment.user}}</strong>
+        <strong>Posted by:
+            {{comment.user}}</strong>
         <p>{{comment.content}}</p>
     </article>
     <p ng-hide="comments.length > 0">no comments</p>
 
     <form>
         <h3>Post a comment</h3>
-        <input type="hidden" name="BookID" ng-model="comment.bookId" />
+        <input type="hidden" name="BookID" ng-model="comment.bookId"/>
         <p>
             <label for="title">Title</label>
-            <input name="title" id="title" ng-model="comment.title" type="text" required />
+            <input name="title" id="title" ng-model="comment.title" type="text" required/>
         </p>
         <p>
-            <label for="userName">User name: </label>
+            <label for="userName">User name:
+            </label>
             <input type="text" id="userName" ng-model="comment.user"/>
         </p>
         <p>
             <label for="Content">Content</label>
             <textarea name="Content" id="Content" required ng-model="comment.content"></textarea>
         </p>
-        <p><input type="button" ng-click="postComment()" value="Post comment" /></p>
+        <p><input type="button" ng-click="postComment()" value="Post comment"/></p>
     </form>
     <button ng-click="deleteBook()">REMOVE BOOK!</button><br/>
+    <button ng-click="editBook()">EDIT BOOK!</button><br/>
     <a src="#">Back to books list</a>
 </section>

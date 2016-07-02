@@ -23,6 +23,11 @@ angular.module('myApp')
                 return $http.get(baseUrl + "/book/details/" + id).then(function(response) {
                     return response.data;
                 })
+            },
+            remove: function(id) {
+                return $http.get(baseUrl + "/book/delete/" + id).then(function(response) {
+                    return response.data;
+                })
             }
         }
     }]);

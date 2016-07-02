@@ -23,17 +23,17 @@
         <input type="hidden" name="BookID" value="@Model.ID" />
         <p>
             <label for="title">Title</label>
-            <input name="title" id="title" type="text" required />
+            <input name="title" id="title" ng-model="comment.title" type="text" required />
         </p>
         <p>
             <label for="userName">User name: </label>
-            <input type="text" id="userName"/>
+            <input type="text" id="userName" ng-model="comment.user"/>
         </p>
         <p>
             <label for="Content">Content</label>
-            <textarea name="Content" id="Content" required></textarea>
+            <textarea name="Content" id="Content" required ng-model="comment.content"></textarea>
         </p>
-        <p><input type="submit" value="Post comment" /></p>
+        <p><input type="button" ng-click="postComment()" value="Post comment" /></p>
     </form>
 
     <a src="#">Back to books list</a>

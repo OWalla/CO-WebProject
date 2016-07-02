@@ -188,6 +188,12 @@ h2{
 = Other
 ------------------------------*/
 
+#map {
+    height: 300px;
+    width: 700px;
+}
+
+
 .row{
     margin-bottom: 30px;
 }

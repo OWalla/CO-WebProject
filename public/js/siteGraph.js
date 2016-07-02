@@ -55,7 +55,7 @@ var siteGraph = (function() {
                 });
         },
 
-        createBooksTimelineGraph: function createBooksTimelineGraph(data) {
+        createStoreRankGraph: function createStoreRankGraph(data) {
 
             // build ranking data array
             // arr[i] represent number of stores with rating = i

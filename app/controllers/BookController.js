@@ -3,7 +3,7 @@
 (function() {
     var app = angular.module("myApp");
 
-    function BookController($scope, BookService) {
+    function BookController($scope, $location, BookService) {
 
         $scope.book = {};
         $scope.name = "";
@@ -16,10 +16,14 @@
             })
         }
 
+        $scope.createBook = function() {
+            $location.path('/book/create');
+        }
+
         $scope.search();
 
     }
 
-    app.controller("BookController", ["$scope", 'BookService', BookController]);
+    app.controller("BookController", ["$scope", '$location', 'BookService', BookController]);
 
 })();

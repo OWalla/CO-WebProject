@@ -5,6 +5,9 @@
 
     app.config(['$routeProvider', function($routeProvider) {
         $routeProvider
+            .when("/main", {
+                templateUrl: "../views/main.html"
+            })
             .when("/book/list", {
                 templateUrl: "../views/book/list.html",
                 controller: "BookController"
@@ -17,5 +20,8 @@
                 templateUrl: "../views/book/author.html",
                 controller: "AuthorController"
             })
+            .otherwise({
+                redirectTo: "/main"
+            });
     }]);
 }());

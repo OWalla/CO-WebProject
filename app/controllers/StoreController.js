@@ -9,12 +9,12 @@
         $scope.name = "";
         $scope.address = "";
         $scope.rank = "";
-        $scope.phone = "";
 
         $scope.search = function() {
             StoreService.search($scope.name, $scope.address, $scope.rank).then(function(data) {
                 $scope.stores = data;
                 siteGraph.createStoreRankGraph(data);
+                resetMarkes(data);
             })
         };
 

@@ -12,6 +12,7 @@
         <script src="../../app/controllers/BookController.js"></script>
         <script src="../../app/controllers/AuthorController.js"></script>
         <script src="../../app/services/BookService.js"></script>
+        <script src="../js/weatherService.js"></script>
         <link href="../css/bootstrap.min.css" rel="stylesheet"/>
         <link href="../css/site.css" rel="stylesheet"/>
         <link href="../css/other.css" rel="stylesheet"/>
@@ -58,11 +59,9 @@
                 <h4>Weather</h4>
                 <p>getting info...</p>
             </div>
-
-            <!-- Weather service -->
-            <!--<script src="~/Scripts/weatherService.js"></script>-->
-            <!--<script src="https://query.yahooapis.com/v1/public/yql?q=select item, wind from weather.forecast where woeid in (select woeid from geo.places(1) where text='israel') and u='c'&format=json&callback=weatherCallback"></script>-->
-
+            <script>
+                getWeather();
+            </script>
             <hr/>
             <footer>
                 <p>&copy; 2016 - Rotten Avocados</p>

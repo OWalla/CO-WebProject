@@ -28,6 +28,10 @@ app.use('/app', express.static('app'));
 var books = require('./controllers/book');
 app.use('/book', books);
 
+// Comment
+var comments = require('./controllers/comment');
+app.use('/comment', comments);
+
 //connect to our database
 var dbConfig = config.get('RottenAvocados.dbConfig');
 var connectionString = 'mongodb://' + dbConfig.host + ':' + dbConfig.port + '/' + dbConfig.dbName;

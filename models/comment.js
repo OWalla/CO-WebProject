@@ -5,10 +5,7 @@ var Comment = new Schema(
     {
         Title: String,
         Content: String,
-        user: {
-            type: Schema.ObjectId,
-            ref: 'User'
-        },
+        user: String,
         book: {
             type: Schema.ObjectId,
             ref: 'Book'

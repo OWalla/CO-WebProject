@@ -14,6 +14,7 @@
         $scope.search = function() {
             StoreService.search($scope.name, $scope.address, $scope.rank).then(function(data) {
                 $scope.stores = data;
+                siteGraph.createBooksTimelineGraph(data);
             })
         };
 

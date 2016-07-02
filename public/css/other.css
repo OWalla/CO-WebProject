@@ -235,3 +235,12 @@
 .bookDescCol{
     display: inline;
 }
+
+/* store rating graph*/
+#rating-table{
+    width: 300px;
+}
+#rating-table tr td:first-child{
+    width: 30px;
+}
+

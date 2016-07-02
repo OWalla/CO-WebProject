@@ -4,24 +4,6 @@
 var siteGraph = (function() {
 
     return {
-        createPopularBooksGraph: function createPopularBooksGraph(data) {
-            // convert {Author,Count} objects to array of values
-            var countValuesArr = Array.from(data, function(b) {
-                return b.count
-            });
-            // find the max and create scale
-            var max = d3.max(countValuesArr);
-            var scale = d3.scale.linear().domain([0, max]).range([0, 100]);
-
-            var b = d3.select("#authors-table").selectAll("th:nth-child(2)");
-            console.log(b);
-            // for each table row, add div to act as the graph bin
-            var g = d3.select("#authors-table").selectAll("td:nth-child(2)").data(data)
-                .append("div").attr("class", "graph-bar").style("width", function(d, i) {
-                    return (scale(d.count)).toString() + "%";
-                });
-        },
-
         createPopularUsersGraph: function createPopularUsersGraph(data) {
 
             var width = 400,
@@ -71,6 +53,25 @@ var siteGraph = (function() {
                 .text(function(d) {
                     return d.data.Name;
                 });
+        },
+
+        createBooksTimelineGraph: function createBooksTimelineGraph(data) {
+
+            // build ranking data array
+            // arr[i] represent number of stores with rating = i
+            var rankData = [0,0,0,0,0];
+            data.forEach(function(store){
+                rankData[store.rank]++;
+            });
+
+            var max = d3.max(rankData);
+            var scale = d3.scale.linear().domain([0, max]).range([0, 100]);
+
+            var g = d3.select("#rating-table").selectAll("td:nth-child(2)").data(rankData)
+                .append("div").attr("class", "graph-bar").style("width", function(d, i) {
+                    return (scale(d)).toString() + "%";
+                });
+
         }
     }
 

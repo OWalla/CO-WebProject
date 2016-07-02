@@ -1,75 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/js/d3.min.js"></script>
-    <script src="/js/siteGraph.js"></script>
-    <script src="../../app/resources/angular.js"></script>
-    <script src="../../app/resources/angular-route.js"></script>
-    <script src="../../app/app.js"></script>
-    <script src="../../app/controllers/BookController.js"></script>
-    <script src="../../app/controllers/AuthorController.js"></script>
-    <script src="../../app/services/BookService.js"></script>
-    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../css/site.css" rel="stylesheet"/>
-    <link href="../css/other.css" rel="stylesheet"/>
-    <title>BookStore</title>
-</head>
-<body ng-app="myApp">
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <nav>
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a src="#" class="navbar-brand">Rotten Avocados</a>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script   src="https://code.jquery.com/jquery-3.0.0.js"   integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo="   crossorigin="anonymous"></script>
+        <script src="/js/d3.min.js"></script>
+        <script src="/js/siteGraph.js"></script>
+        <script src="../../app/resources/angular.js"></script>
+        <script src="../../app/resources/angular-route.js"></script>
+        <script src="../../app/app.js"></script>
+        <script src="../../app/controllers/BookController.js"></script>
+        <script src="../../app/controllers/AuthorController.js"></script>
+        <script src="../../app/services/BookService.js"></script>
+        <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="../css/site.css" rel="stylesheet"/>
+        <link href="../css/other.css" rel="stylesheet"/>
+        <title>BookStore</title>
+    </head>
+    <body ng-app="myApp">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <nav>
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a src="#" class="navbar-brand">Rotten Avocados</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a src="#">Our library</a>
+                            </li>
+                            <li>
+                                <a src="#">Authors</a>
+                            </li>
+                            <li>
+                                <a src="#">Popular books</a>
+                            </li>
+                            <li>
+                                <a src="#">Popular reviewers</a>
+                            </li>
+                            <li>
+                                <a src="#">Search reviewers</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a src="#">Our library</a>
-                    </li>
-                    <li>
-                        <a src="#">Authors</a>
-                    </li>
-                    <li>
-                        <a src="#">Popular books</a>
-                    </li>
-                    <li>
-                        <a src="#">Popular reviewers</a>
-                    </li>
-                    <li>
-                        <a src="#">Search reviewers</a>
-                    </li>
-                </ul>
+        </div>
+        <div class="container body-content">
+
+            <div ng-view></div>
+            <div id="temperatureDiv">
+                <h4>Weather</h4>
+                <p>getting info...</p>
             </div>
-        </nav>
-    </div>
-</div>
-<div ng-view></div>
-<div class="container body-content">
 
-    <div id="temperatureDiv">
-        <h4>Weather</h4>
-        <p>getting info...</p>
-    </div>
+            <!-- Weather service -->
+            <!--<script src="~/Scripts/weatherService.js"></script>-->
+            <!--<script src="https://query.yahooapis.com/v1/public/yql?q=select item, wind from weather.forecast where woeid in (select woeid from geo.places(1) where text='israel') and u='c'&format=json&callback=weatherCallback"></script>-->
 
-    <!-- Weather service -->
-    <!--<script src="~/Scripts/weatherService.js"></script>-->
-    <!--<script src="https://query.yahooapis.com/v1/public/yql?q=select item, wind from weather.forecast where woeid in (select woeid from geo.places(1) where text='israel') and u='c'&format=json&callback=weatherCallback"></script>-->
-
-    <hr />
-    <footer>
-        <!--<p>&copy; @DateTime.Now.Year - Rotten Avocados</p>-->
-    </footer>
-</div>
-
-<!--@Scripts.Render("~/bundles/jquery")-->
-<!--@Scripts.Render("~/bundles/bootstrap")-->
-<!--@RenderSection("scripts", required: false)-->
-</body>
+            <hr/>
+            <footer>
+                <p>&copy; 2016 - Rotten Avocados</p>
+            </footer>
+        </div>
+    </body>
 </html>

@@ -11,4 +11,9 @@ var Book = new Schema(
     }
 );
 
+// This will remove the child comments of the book
+Book.pre('remove', function(next) {
+    this.model('Comment').remove({ book: this._id }, next);
+});
+
 module.exports = mongoose.model('Book', Book);

@@ -61,14 +61,14 @@ var siteGraph = (function() {
             // arr[i] represent number of stores with rating = i
             var rankData = [0,0,0,0,0];
             data.forEach(function(store){
-                rankData[store.rank]++;
+                rankData[store.rank-1]++;
             });
 
             var max = d3.max(rankData);
             var scale = d3.scale.linear().domain([0, max]).range([0, 100]);
 
-            var g = d3.select("#rating-table").selectAll("td:nth-child(2)").data(rankData)
-                .append("div").attr("class", "graph-bar").style("width", function(d, i) {
+            var g = d3.select("#rating-table").selectAll("td:nth-child(2) div").data(rankData)
+                .attr("class", "graph-bar").style("width", function(d, i) {
                     return (scale(d)).toString() + "%";
                 });
 

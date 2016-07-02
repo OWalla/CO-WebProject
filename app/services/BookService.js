@@ -9,7 +9,7 @@ angular.module('myApp')
                         return response.data;
                     })
             },
-            create: function(book) {
+            sendData: function(book) {
                 return $http.post(baseUrl + "/book/put", book).then(function(response) {
                     return response.data;
                 })

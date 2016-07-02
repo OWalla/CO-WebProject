@@ -18,12 +18,6 @@
 
         $scope.search();
 
-        $scope.create = function() {
-            BookService.create($scope.book).then(function(result) {
-                alert(result);
-            })
-        }
-
     }
 
     app.controller("BookController", ["$scope", 'BookService', BookController]);

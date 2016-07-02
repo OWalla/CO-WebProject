@@ -14,7 +14,11 @@
             })
             .when("/book/create", {
                 templateUrl: "../views/book/create.html",
-                controller: "BookController"
+                controller: "BookEditorController"
+            })
+            .when("/book/edit/:id", {
+                templateUrl: "../views/book/create.html",
+                controller: "BookEditorController"
             })
             .when("/book/author", {
                 templateUrl: "../views/book/author.html",

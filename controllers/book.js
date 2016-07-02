@@ -27,7 +27,7 @@ router.get('/list/(:name)?/(:author)?/(:yearPublished)?', function(req, res) {
 
 router.post('/put', function(req, res) {
     var successMessage = "Book saved successfully!";
-    var id = req.body.id;
+    var id = req.body._id;
     var name = req.body.name;
     var author = req.body.author;
     var description = req.body.description;
@@ -36,9 +36,7 @@ router.post('/put', function(req, res) {
     if (!name | !author | !description | !yearPublished) {
         res.json("Some of the data is missing!");
     } else if (id) {
-        Book.find({
-            _id: id
-        }, function(err, book) {
+        Book.findById(id, function(err, book) {
             if (err) {
                 console.log(err);
                 res.json(err);

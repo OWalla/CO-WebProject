@@ -20,6 +20,10 @@
                 templateUrl: "../views/book/author.html",
                 controller: "AuthorController"
             })
+            .when("/book/details/:id", {
+                templateUrl: "../views/book/details.html",
+                controller: "BookDetailsController"
+            })
             .otherwise({
                 redirectTo: "/main"
             });

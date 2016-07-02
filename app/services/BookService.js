@@ -18,6 +18,11 @@ angular.module('myApp')
                 return $http.get(baseUrl + "/book/author").then(function(response) {
                     return response.data;
                 })
+            },
+            details: function(id) {
+                return $http.get(baseUrl + "/book/details/" + id).then(function(response) {
+                    return response.data;
+                })
             }
         }
     }]);

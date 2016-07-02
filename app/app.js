@@ -20,6 +20,10 @@
                 templateUrl: "../views/book/author.html",
                 controller: "AuthorController"
             })
+            .when("/book/details/:id", {
+                templateUrl: "../views/book/details.html",
+                controller: "BookDetailsController"
+            })
             .when("/store/list", {
                 templateUrl: "../views/store/list.html",
                 controller: "StoreController"

@@ -7,7 +7,8 @@ var Store = new Schema(
         address: String,
         rank: Number,
         phone: String,
-        books: [String]
+        books: [String],
+        coordinates: [Number]
     }
 );
 

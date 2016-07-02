@@ -7,6 +7,7 @@
 
         BookService.details($routeParams.id).then(function(result) {
             $scope.book = result;
+            $scope.comments = result.comments;
         })
     }
 

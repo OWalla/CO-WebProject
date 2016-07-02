@@ -7,3 +7,35 @@
     <p class="book-description">{{ book.description }}</p>
 </article>
 
+<section id="comments">
+    <h3>Comments</h3>
+    <article ng-repeat="comment in comments">
+        <h3>
+            {{comment.title}}
+        </h3>
+        <strong>Posted by: {{comment.user}}</strong>
+        <p>{{comment.content}}</p>
+    </article>
+    <p ng-hide="comments.length > 0">no comments</p>
+
+    <form>
+        <h3>Post a comment</h3>
+        <input type="hidden" name="BookID" value="@Model.ID" />
+        <p>
+            <label for="title">Title</label>
+            <input name="title" id="title" type="text" required />
+        </p>
+        <p>
+            <label for="userName">User name: </label>
+            <input type="text" id="userName"/>
+        </p>
+        <p>
+            <label for="Content">Content</label>
+            <textarea name="Content" id="Content" required></textarea>
+        </p>
+        <p><input type="submit" value="Post comment" /></p>
+    </form>
+
+    <a src="#">Back to books list</a>
+</section>
+

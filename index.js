@@ -7,6 +7,7 @@ var bodyParser = require("body-parser");
 // models
 var Comment = require('./models/comment');
 var Book = require('./models/Book');
+var Store = require('./models/Store');
 
 // Set up the app
 var app = express();
@@ -32,6 +33,10 @@ app.use('/book', books);
 var comments = require('./controllers/comment');
 app.use('/comment', comments);
 
+// Store
+var stores = require('./controllers/store');
+app.use('/store', stores);
+
 //connect to our database
 var dbConfig = config.get('RottenAvocados.dbConfig');
 var connectionString = 'mongodb://' + dbConfig.host + ':' + dbConfig.port + '/' + dbConfig.dbName;
@@ -43,7 +48,7 @@ mongoose.connect(connectionString, function(err, db) {
 
     Comment.remove({}, function(err) {});
     Book.remove({}, function(err) {});
-    // Stores.remove({}, function(err) {});
+    Store.remove({}, function(err) {});
 
     // read data file
     var file = jsonfile.readFile("Data/books.json", function(err, data) {
@@ -54,6 +59,14 @@ mongoose.connect(connectionString, function(err, db) {
         })
     });
 
+    // read data file
+    var storesFile = jsonfile.readFile("Data/stores.json", function(err, data) {
+
+        Store.insertMany(data.stores, function(err, result) {
+            if (err)
+                console.log(err);
+        })
+    });
 
 
     // Start the app

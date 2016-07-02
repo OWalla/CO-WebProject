@@ -1,0 +1,14 @@
+<h2>Stores</h2>
+<hr/>
+<section id="stores-list-section">
+    <ul id="stores-list">
+        <li class="store-list" ng-repeat="store in stores">
+            <h4 style="margin-top: 60px;">
+                {{store.name}}
+            </h4>
+            <p>{{store.address}}</p>
+            <p>Rank - {{store.rank}}</p>
+            <p>{{store.phone}}</p>
+        </li>
+    </ul>
+</section>

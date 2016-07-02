@@ -163,6 +163,27 @@
 =Book list
 ------------------------------*/
 
+/*------------------------------
+=Store list
+------------------------------*/
+
+.store-list{
+    display:inline-block;
+    width: 150px;
+    height: 300px;
+    margin: 2px;
+    padding: 2px;
+    position: relative;
+    text-align: center;
+    background-image: url("/img/StoreCover.png");
+    background-size: 150px 200px;
+    background-repeat: no-repeat;
+}
+
+/*------------------------------
+=Store list
+------------------------------*/
+
 .row{
     margin-bottom: 30px;
 }

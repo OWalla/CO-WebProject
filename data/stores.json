@@ -1,0 +1,31 @@
+{
+    "stores": [
+      {
+        "name": "Best Book",
+        "address": "Even Gevirol 8, Tel-Aviv",
+        "rank": 4,
+        "phone": "+97239555988",
+        "books": ["Where are we?","How To End The World?","Evil for Dummies", "Spider-man", "Do stuff"]
+    },
+    {
+        "name": "Book Land",
+        "address": "Derch Menachem Begin 103, Tel-Aviv",
+        "rank": 4,
+        "phone": "+97235225988",
+        "books": ["Evil for Dummies", "Do stuff"]
+    },
+    {
+        "name": "Book Man",
+        "address": "Igal Alon Street 7, Tel-Aviv",
+        "rank": 2,
+        "phone": "+97239555779",
+        "books": ["Why you should NOT read book", "Spider-man"]
+    },
+    {
+        "name": "Book Place",
+        "address": "Shaul HaMelech 8, Tel-Aviv",
+        "rank": 3,
+        "phone": "+97239557778",
+        "books": ["Where are we?","How To End The World?"]
+    }]
+}

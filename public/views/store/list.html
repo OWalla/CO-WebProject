@@ -1,4 +1,10 @@
 <h2>Stores</h2>
+<p>
+    Name: <input type="text" ng-model="name"/>
+    Address: <input type="text" ng-model="address"/>
+    Minimum Rank: <input type="text" ng-model="rank"/>
+    <input type="button" value="Filter" ng-click="search()"/>
+</p>
 <hr/>
 <section id="stores-list-section">
     <ul id="stores-list">
@@ -7,7 +13,7 @@
                 {{store.name}}
             </h4>
             <p>{{store.address}}</p>
-            <p>Rank - {{store.rank}}</p>
+            <p>Rank: {{store.rank}}</p>
             <p>{{store.phone}}</p>
         </li>
     </ul>

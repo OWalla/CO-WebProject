@@ -6,12 +6,13 @@
     function StoreController($scope, StoreService) {
 
         $scope.store = {};
+        $scope.name = "";
         $scope.address = "";
-        $scope.rank = 0;
+        $scope.rank = "";
         $scope.phone = "";
 
         $scope.search = function() {
-            StoreService.search($scope.name).then(function(data) {
+            StoreService.search($scope.name, $scope.address, $scope.rank).then(function(data) {
                 $scope.stores = data;
             })
         };

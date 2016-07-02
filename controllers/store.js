@@ -3,18 +3,28 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Store = mongoose.model('Store');
 
-router.get('/list', function(req, res) {
+router.get('/list/(:name)?/(:address)?/(:rank)?', function(req, res) {
 
     var name = (req.params.name) || '';
+    var address = (req.params.address) || '';
+    var rank = (req.params.rank) || 0;
 
-    Store.find({})
-        .exec(function(err, albums) {
+    Store.find({
+        name: new RegExp(name, "i"),
+        address: new RegExp(address, "i"),
+        rank: {
+            $gte: rank
+        }
+    })
+        .exec(function(err, info) {
             if (err)
                 console.log(err);
-            else
-                res.json(albums);
+            else {
+                res.json(info);
+            }
         });
 });
+
 
 router.get('/list/(:bookName)', function(req, res) {
 
@@ -23,11 +33,11 @@ router.get('/list/(:bookName)', function(req, res) {
     Store.find({
         books: new RegExp(bookName, "i")
     })
-    .exec(function(err, albums) {
+    .exec(function(err, info) {
         if (err)
             console.log(err);
         else
-            res.json(albums);
+            res.json(info);
     });
 });
 

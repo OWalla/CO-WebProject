@@ -134,18 +134,16 @@ router.get('/details/:id', function(req, res) {
 
     var id = req.params.id;
 
-    Book.find({
-        _id: id
-    })
     Book.findById(id)
-    .exec(function(err, book) {
-        if (err){
-            console.log("Error finding book details id:" + id);
-            console.log(err);
-        } else {
-            res.json(book);
-        }
-    });
+        .populate('comments')
+        .exec(function(err, book) {
+            if (err) {
+                console.log("Error finding book details id:" + id);
+                console.log(err);
+            } else {
+                res.json(book);
+            }
+        });
 });
 
 

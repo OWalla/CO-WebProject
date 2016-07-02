@@ -20,7 +20,7 @@
 
     <form>
         <h3>Post a comment</h3>
-        <input type="hidden" name="BookID" value="@Model.ID" />
+        <input type="hidden" name="BookID" ng-model="comment.bookId" />
         <p>
             <label for="title">Title</label>
             <input name="title" id="title" ng-model="comment.title" type="text" required />
@@ -38,4 +38,3 @@
 
     <a src="#">Back to books list</a>
 </section>
-

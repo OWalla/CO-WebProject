@@ -5,6 +5,12 @@
 
     function BookDetailsController($scope, $routeParams, $location, BookService, CommentService) {
 
+        var server = io();
+        server.on('add comment', function (data) {
+            alert(data.user + " has posted a new comment!");
+        })
+
+        BookService.details($routeParams.id).then(function (result) {
         BookService.details($routeParams.id).then(function(result) {
             $scope.book = result;
             $scope.comments = result.comments;
@@ -16,6 +22,7 @@
         $scope.postComment = function() {
             CommentService.create($scope.comment).then(function(result) {
                 alert(result);
+                server.emit('new comment', {user: $scope.comment.user});
             });
         }
 

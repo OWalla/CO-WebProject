@@ -10,7 +10,6 @@
             alert(data.user + " has posted a new comment!");
         })
 
-        BookService.details($routeParams.id).then(function (result) {
         BookService.details($routeParams.id).then(function(result) {
             $scope.book = result;
             $scope.comments = result.comments;

@@ -5,27 +5,31 @@
         "address": "Even Gevirol 8, Tel-Aviv",
         "rank": 4,
         "phone": "+97239555988",
-        "books": ["Where are we?","How To End The World?","Evil for Dummies", "Spider-man", "Do stuff"]
+        "books": ["Where are we?","How To End The World?","Evil for Dummies", "Spider-man", "Do stuff"],
+        "coordinates": [32.072106, 34.781921]
     },
     {
         "name": "Book Land",
         "address": "Derch Menachem Begin 103, Tel-Aviv",
         "rank": 4,
         "phone": "+97235225988",
-        "books": ["Evil for Dummies", "Do stuff"]
+        "books": ["Evil for Dummies", "Do stuff"],
+        "coordinates": [32.068589, 34.786710]
     },
     {
         "name": "Book Man",
         "address": "Igal Alon Street 7, Tel-Aviv",
         "rank": 2,
         "phone": "+97239555779",
-        "books": ["Why you should NOT read book", "Spider-man"]
+        "books": ["Why you should NOT read book", "Spider-man"],
+        "coordinates": [32.054505, 34.791705]
     },
     {
         "name": "Book Place",
         "address": "Shaul HaMelech 8, Tel-Aviv",
         "rank": 3,
         "phone": "+97239557778",
-        "books": ["Where are we?","How To End The World?"]
+        "books": ["Where are we?","How To End The World?"],
+        "coordinates": [32.075545, 34.783978]
     }]
 }

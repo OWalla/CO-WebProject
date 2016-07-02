@@ -108,6 +108,27 @@ router.get('/author', function(req, res) {
     });
 });
 
+router.get('/delete/:id', function(req, res) {
+    Book.findById(req.params.id, function(findErr, book) {
+        if (findErr) {
+            console.log(findErr);
+            res.json(findErr);
+        } else if (!book) {
+            console.log("book does not exists!");
+            res.json("book does not exists!")
+        } else {
+            book.remove(function(removeErr, result) {
+                if (removeErr) {
+                    console.log(removeErr);
+                    res.json(removeErr);
+                } else {
+                    res.json("Removed successfully!");
+                }
+            })
+        }
+    })
+});
+
 
 
 module.exports = router;

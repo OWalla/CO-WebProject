@@ -1,7 +1,7 @@
 // Code goes here
 
 (function() {
-    var app = angular.module("myApp");
+    var app = angular.module("bookApp");
 
     function BookEditorController($scope, $routeParams, $location, BookService) {
 

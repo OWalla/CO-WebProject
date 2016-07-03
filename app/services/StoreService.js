@@ -1,4 +1,4 @@
-angular.module('myApp')
+angular.module('storeApp')
     .factory('StoreService', ['$http', function($http) {
         var baseUrl = "http://localhost:8080";
 

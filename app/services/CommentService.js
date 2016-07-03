@@ -1,4 +1,4 @@
-angular.module('myApp')
+angular.module('bookApp')
     .factory('CommentService', ['$http', function($http) {
         var baseUrl = "http://localhost:8080";
 

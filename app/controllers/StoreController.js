@@ -1,7 +1,7 @@
 // Code goes here
 
 (function() {
-    var app = angular.module("myApp");
+    var app = angular.module("storeApp");
 
     function StoreController($scope, StoreService) {
 

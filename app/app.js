@@ -6,10 +6,9 @@
 
     mainApp.config(['$routeProvider', function($routeProvider) {
         $routeProvider
-            .when("/store/list", {
-            templateUrl: "../views/store/list.html",
-            controller: "StoreController"
-        })
+            .when("/main", {
+                templateUrl: "../views/main.html"
+            })
             .otherwise({
                 redirectTo: "/main"
             });
@@ -19,8 +18,9 @@
 
     storeApp.config(['$routeProvider', function($routeProvider) {
         $routeProvider
-            .when("/main", {
-                templateUrl: "../views/main.html"
+            .when("/store/list", {
+                templateUrl: "../views/store/list.html",
+                controller: "StoreController"
             })
             .otherwise({
                 redirectTo: "/main"
